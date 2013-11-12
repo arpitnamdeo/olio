@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="content-language" content="en"/>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1.0,
+            user-scalable=no, target-densitydpi=device-dpi"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=3.0,
+            user-scalable=yes, target-densitydpi=device-dpi"/>
+        <meta name="viewport" content="width=640,          initial-scale=1, minimum-scale=0.5, maximum-scale=3.0,
+            user-scalable=yes, target-densitydpi=device-dpi"/>
+       
+        <title>theOwl</title>
+        
+        <!-- Include stylesheets -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400|Roboto:100,400,300' rel='stylesheet' type='text/css'>
+        <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="css/isotope.css" rel="stylesheet" type="text/css" />
+        <link href="css/default.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Include JavaScript files and libraries -->
+        <script src="js/global.js" ></script>
+        
+        <!-- include libraries -->
+		<script src="js/jquery-2.0.3.min.js" ></script>
+        <script src="js/jquery.isotope.min.js" ></script>
+        <script src="js/prefixfree.min.js" ></script>
+        <script src="js/prefixfree.jquery.js" ></script>
+        
+        <!-- fetch feeds from all sources -->
+        <script src="js/fetchfeed.js" ></script>
+        <script src="js/sources.js" ></script>
+        <script src="js/behaviour.js" ></script>
+        
+        <script type="text/javascript" >
+           
+            $(document).ready(function() {
+                
+                /*var viewportWidth = document.documentElement.clientWidth;
+                isotopeColumns = (viewportWidth > 799) ? 3 : 1; 
+                isotopeColumnWidth = Math.floor(viewportWidth / (isotopeColumns + 0.5));
+               // alert(isotopeColumnWidth);
+                
+                alert($('#interaction-area').innerWidth());
+                alert($('nav').innerWidth());
+                alert($('#interaction-area').innerWidth() - ($('nav').innerWidth() * 1.1));*/
+                //$('#stories').width(($('#interaction-area').innerWidth() - $('nav').outerWidth()));
+                /*alert($('#stories').width());*/
+                populateSidebar();
+                $(".feed-category").on("click", toggleCategory);
+                $(".feed-source").on("click", loadFeed);
+                $(".feed-all").on("click", loadAllFeeds);
+                $(".snippet").on("click", openCurrentCategory); 
+                
+                isotopeInitialize();
+			});
+            
+            //Relayout as window laods completely
+            $(window).load(isotopeReLayout);
+                
+            //Relayout when window is resized
+            $(window).smartresize(isotopeReLayout);
+                        
+		</script>
+    </head>
+    <body>
+        <header>
+            <h1>Simply Readly</h1>
+        </header>
+
+        <div id="interaction-area">
+                <nav id="feed-sources">
+                </nav>
+            <section id="stories" >
+                <!-- articles populated here -->
+            </section>
+        </div>
+        
+        <footer>Copyright info!</footer>
+        
+    </body>
+</html>

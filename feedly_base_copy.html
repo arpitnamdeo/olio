@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="content-language" content="en"/>
+		<title>Simply Readly</title>
+        
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400|Roboto:100,400,300' rel='stylesheet' type='text/css'>
+
+        <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+		<link href="css/all.css" rel="stylesheet" type="text/css" />
+
+        <script src="js/global.js" ></script>
+        
+        <!-- include libraries -->
+		<script src="js/jquery-2.0.3.min.js" ></script>
+        <script src="js/jquery.isotope.min.js" ></script>
+        <script src="js/prefixfree.min.js" ></script>
+        <script src="js/prefixfree.jquery.js" ></script>
+        
+        <!-- fetch feeds from all sources -->
+        <script src="js/fetchfeed.js" ></script>
+        <script src="js/sources.js" ></script>
+        <script src="js/behaviour.js" ></script>
+
+		<script type="text/javascript" >
+                        
+			$(document).ready(function() {
+                populateSidebar();
+                $(".feed-category").on("click", toggleCategory);
+                $(".feed-source").on("click", loadFeed);
+                $(".feed-all").on("click", loadAllFeeds);
+                $(".snippet").on("click", openCurrentFeed);
+               /* $('#stories').imagesLoaded( function() {
+                    $('#stories').isotope({
+                        itemSelector: 'article',
+                        layoutMode : 'masonry',
+                        resizesContainer : true,
+                        masonry : {
+                            columnWidth : 100,
+                            gutter: 10
+                        }
+                    });
+                });*/
+//http://benholland.me/javascript/how-to-build-a-site-that-works-like-pinterest/
+                    //http://www.quora.com/Pinterest/What-technology-is-used-to-generate-pinterest-coms-absolute-div-stacking-layout
+                
+                
+                /*$('#stories').FeedEk({
+					FeedUrl : 'http://feeds.gawker.com/lifehacker/full.xml',
+					MaxCount : 10,
+					ShowDesc : true,
+					ShowPubDate : true,
+					DescCharacterLimit : 200
+				});
+                $('#stories').FeedEk({
+					FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
+					MaxCount : 10,
+					ShowDesc : true,
+					ShowPubDate : true,
+					DescCharacterLimit : 200
+				});*/            
+			});
+			/*$(document).ready(function() {
+				$('#stories').FeedEk({
+					FeedUrl : 'http://rss.cnn.com/rss/edition.rss',
+					MaxCount : 10,
+					ShowDesc : true,
+					ShowPubDate : true,
+					DescCharacterLimit : 200
+				});
+			});*/
+		</script>
+
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<h1>Simply Readly</h1>
+			</header>
+
+			<div id="interaction-area">
+
+				<nav id="feed-sources">
+                    <!--<ul>
+                        <li><a>All</a></li>
+                        <li class="feed-category"><a onclick="toggleCategory();">News</a>
+                            <ul>
+                                <li class="feed-source" ><a><img src="img/sample_wide.jpg">CNN</a></li>
+                                <li><a><img src="img/sample.jpg">Times of India</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="red"><a>Sports</a>
+                            <ul>
+                                <li><a>ESPN</a></li>
+                                <li><a>NBC</a></li>
+                            </ul>
+                        </li>
+                    </ul>-->
+				</nav>
+
+				<!--<div id="content">-->
+					<section id="stories">
+                        
+						<!--
+						http://wp.color-theme.com/pravda/
+						<article>
+													<header>
+														<h1>New info available</h1>
+													</header>
+						
+													<time>
+														Jan 29, 2013
+													</time>
+													<p>
+														This has been found by our technologists that it is a good thing to know and to read
+														This has been found by our technologists that it is a good thing to know and to read
+													</p>
+													
+													<footer>
+														<p>
+															action bar
+														</p>
+													</footer>
+												</article>
+						
+												<article>
+													<header>
+														<h1>Further info available on how to read your mind</h1>
+													</header>
+													<time>
+														Feb 12, 2013
+													</time>
+													<p>
+														This has been found by our technologists that it is a good thing to know and to read
+														This has been found by our technologists that it is a good thing to know and to read
+														This has been found by our technologists that it is a good thing to know and to read
+														This has been found by our technologists that it is a good thing to know and to read
+													</p>
+													
+													<footer>
+														<p>
+															action bar
+														</p>
+													</footer>
+												</article>
+												
+												<article>
+													<header>
+														<h1>Further info available on how to read your mind</h1>
+													</header>
+													<time>
+														Feb 12, 2013
+													</time>
+													<p>
+														This has been found by our technologists that it is a good thing to know and to read
+														This has been found by our technologists that it is a good thing to know and to read
+														This has been found by our technologists that it is a good thing to know and to read
+														This has been found by our technologists that it is a good thing to know and to read
+													</p>
+													
+													<footer>
+														<p>
+															action bar
+														</p>
+													</footer>
+												</article>
+												
+												<article>
+													<header>
+														<h1>New info available</h1>
+													</header>
+						
+													<time>
+														Jan 29, 2013
+													</time>
+													<p>
+														This has been found by our technologists that it is a good thing to know and to read
+														This has been found by our technologists that it is a good thing to know and to read
+													</p>
+													
+													<footer>
+														<p>
+															action bar
+														</p>
+													</footer>
+												</article>-->
+						
+
+					</section>
+                    
+                    
+				<!--</div>-->
+			</div>
+            <footer>Copyright info!</footer>
+		</div>
+
+		<!--
+		<div>
+					<div class="rssDiv">
+						<p>
+							Example
+						</p>
+						<div id="divRss"></div>
+					</div>
+					<div class="rssDiv">
+						<p>
+							Example 2
+						</p>
+						<div id="divRss2"></div>
+					</div>
+					<div style="clear:both"></div>
+				</div>-->
+		
+	</body>
+
+</html>
