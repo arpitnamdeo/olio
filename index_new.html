@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="content-language" content="en"/>
+        
+        <meta name="viewport" content="width=device-width" />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1.0,
+            user-scalable=no, target-densitydpi=device-dpi"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=3.0,
+            user-scalable=yes, target-densitydpi=device-dpi"/>
+        <meta name="viewport" content="width=640,          initial-scale=1, minimum-scale=0.5, maximum-scale=3.0,
+            user-scalable=yes, target-densitydpi=device-dpi"/>-->
+       
+        <title>theOwl</title>
+        
+        <!-- Include stylesheets -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400|Roboto:100,400,300' rel='stylesheet' type='text/css'>
+        <!-- CSS library -->
+        <link href="css/lib/normalize.css" rel="stylesheet" type="text/css" />
+        <link href="css/lib/isotope.css" rel="stylesheet" type="text/css" />
+        <link href="css/lib/reveal.css" rel="stylesheet" type="text/css" />
+        <link href="css/lib/nprogress.css" rel="stylesheet" type="text/css" />
+        <!-- project CSS -->
+        <link href="css/default_new.css" rel="stylesheet" type="text/css" />
+        
+        <!-- Include JavaScript files and libraries -->
+        <!-- Include global objects -->
+        <script src="js/global.js" ></script>
+        
+        <!-- Load JavaScript libraries -->
+		<script src="js/lib/jquery-2.0.3.min.js" ></script>
+        <script src="js/lib/jquery.isotope.min.js" ></script>
+        <script src="js/lib/prefixfree.min.js" ></script>
+        <script src="js/lib/prefixfree.jquery.js" ></script>
+        <script src="js/lib/nprogress.js" ></script>
+        <script src="js/lib/jquery.reveal.js" ></script>
+        
+        <!-- fetch feeds from all sources -->
+        <script src="js/fetchfeed.js" ></script>
+        <script src="js/sources.js" ></script>
+        <script src="js/behaviour.js" ></script>
+        
+        <script type="text/javascript" >
+            
+            $(document).ready(function() {
+                NProgress.start();
+                /*var viewportWidth = document.documentElement.clientWidth;
+                isotopeColumns = (viewportWidth > 799) ? 3 : 1; 
+                isotopeColumnWidth = Math.floor(viewportWidth / (isotopeColumns + 0.5));
+               // alert(isotopeColumnWidth);
+                
+                alert($('#interaction-area').innerWidth());
+                alert($('nav').innerWidth());
+                alert($('#interaction-area').innerWidth() - ($('nav').innerWidth() * 1.1));*/
+                //$('#stories').width(($('#interaction-area').innerWidth() - $('nav').outerWidth()));
+                /*alert($('#stories').width());*/
+                populateSidebar();
+                $(".feed-category").on("click", toggleCategory);
+                $(".feed-source").on("click", loadFeed);
+                $(".feed-all").on("click", loadAllFeeds);
+                $(".snippet").on("click", openCurrentCategory); 
+                
+                isotopeInitialize();
+                
+                NProgress.done();
+			});
+            
+            //Relayout as window laods completely
+            $(window).load(isotopeReLayout);
+                
+            //alert($('#stories').width() +'>>'+$('#stories').innerWidth() +'>>'+$('#stories').outerWidth());
+            //Relayout when window is resized
+            $(window).smartresize(isotopeReLayout);
+                        
+		</script>
+        
+        <script src="intelxdk.js"></script>
+        <script type="text/javascript">
+            /* This code is used to run as soon as appMobi activates */
+            var onDeviceReady=function(){
+                //hide splash screen
+                AppMobi.device.hideSplashScreen();	
+            };
+            document.addEventListener("appMobi.device.ready",onDeviceReady,false);
+        </script>
+    </head>
+    
+    <!-- Content Area -->
+    <body>
+        <header id="page-header" >
+            <!--h1>Simply Readly NNN</h1-->
+            <ul class="page-header">
+                <li class="nav-logo">NNN</li>
+                <li class="site-name">SSS
+                    <ul> <!-- category list-->
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li id="nav-category">News
+                    <ul> <!-- source list-->
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li id="nav-source">CNN
+                    <ul> <!-- sub-source list-->
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li id="nav-sub-source">Breaking News</li>
+            </ul>
+        </header>
+
+        <div id="interaction-area">
+            <nav id="feed-sources">
+            </nav>
+            <section id="stories" >
+                <!-- articles populated here -->
+            </section>
+            <aside id="page-aside">
+            </aside>
+        </div>
+        
+        <div id="article-content">
+            
+        </div>
+        
+        <footer id="page-footer" >Copyright info!</footer>
+        
+    </body>
+</html>
