@@ -15,8 +15,9 @@ html {
 body {
 	width: 100%;
 	height: inherit;
-    background: url(../img/chalkboard-sobeys.jpg) repeat;
+    /*background: url(../img/chalkboard-sobeys.jpg) repeat;*/
     /*overflow-x:hidden;*/
+    z-index:1;
 }
 
 body > header, body > footer {
@@ -24,10 +25,12 @@ body > header, body > footer {
 	display: block;
 	font-weight: 300;
 	font-size: 1em;
-	height: 4.5em;
-    width:auto; /*100%;*/
-    z-index:10;
-    overflow:hidden;
+	height: 3.7em;
+    width:100%; /*100%;*/
+    max-width:100%;
+    z-index:100;
+    overflow:visible;
+    box-sizing:border-box;
 }
 
 body > header {
@@ -52,15 +55,65 @@ body > header {
 }
 
 body > header ul {
-    display:inline;
+    display: inline;
     list-style: none;
     color: white;
 }
 
 body > header ul > li {
-    display:inline;
+    display: inline;
     list-style: none;
     color: white;
+}
+
+#page-nav {
+    list-style:none;
+    margin-bottom:10px;
+    float:left;
+    width:100%;
+    position:relative;
+    z-index:100;
+}
+
+.nav-logo, .dropdown {
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0;
+    margin-right:1em;
+    position:relative;
+    width: 6em;
+    max-width:5em;
+    z-index:100;
+    box-sizing:border-box;
+    border: solid black 1px;
+    display: inline;
+    list-style: none;
+    background:fbfbfb;
+}
+
+.dropdown a {
+    display:block;
+    text-decoration:none;
+}
+
+.dropdown-list {
+    position:relative;
+    left:0;
+    display:inline-block;
+    border: solid white 1px;
+}
+
+.dropdown-list > li {
+    position:relative;
+    left:0;
+    display:block;
+    padding:0.4em;
+    /*color:#fff;
+    background:#333;
+    */text-decoration:none;
+    border: solid green 1px;
+    width:100%;
 }
 
 body > footer {
@@ -72,7 +125,7 @@ body > footer {
 #interaction-area {
     position:absolute;
 	/*width: 100%;*/
-    top: 5.5em;
+    top: 15.5em;
     left:0;
     right:0;
 	/*height: 80%;*/
@@ -85,7 +138,7 @@ body > footer {
     clear: both;
 }
 
-nav {
+nav#feed-sources {
 	position: fixed;
     left: 0.2em;
     top: 5.5em;
@@ -99,24 +152,26 @@ nav {
     display: inline;
 }
 
-nav > * {
+nav#feed-sources > * {
     cursor: default;
     margin:0;
     padding-left: 1em;
 }
 
-nav > ul {
+nav#feed-sources > ul {
     position: relative;
     margin:0;
+    margin-right:1em;
     padding-top: 0.5em;
     padding-left: 1em;/*left: -1.5em;*/
     /*background-color: #44444a;*/
     background: url(../img/main_container_pattern.png) repeat;
     /*line-height: 2.5em;*/
     list-style: none;
+
 }
 
-nav > ul > a {
+nav#feed-sources > ul > a {
 	display: block;
 	/*font-weight: 300;*/
 	font-size: 1em;
@@ -129,7 +184,7 @@ nav > ul > a {
     /*text-shadow: 0 0 0.2em #8F7;*/
 }
 
-nav > ul > li {
+nav#feed-sources > ul > li {
     /*border-bottom: solid black 0.1em;*/
     line-height: 2em;
     text-transform: uppercase;
@@ -138,7 +193,7 @@ nav > ul > li {
     /*text-shadow: 0 0 0.2em blue;*/
 }
 
-nav > ul > li > ul {
+nav#feed-sources > ul > li > ul {
     display: none;
     list-style: none;
     margin:0;
@@ -146,11 +201,11 @@ nav > ul > li > ul {
     padding-left: 1em;
 }
 
-nav > ul > li > ul > li > a {
+nav#feed-sources > ul > li > ul > li > a {
     /*padding: 0.3em 0.5em 0.2em 0em;*/
 }
 
-nav ul > li > a > img {
+nav#feed-sources ul > li > a > img {
     height: 1.5em;
     width: 1.5em;
     max-height: 1.5em;
@@ -158,12 +213,12 @@ nav ul > li > a > img {
     padding-right: 0.2em;
 }
 
-nav > ul > li > ul {
+nav#feed-sources > ul > li > ul {
     background: #777779;
     background: url(../img/main_container_pattern.png) repeat;
 }
 
-nav > ul > li > ul > li {
+nav#feed-sources > ul > li > ul > li {
     /*padding-left: 1em;*/
     font-weight: 300;
     line-height: 1.5em;
@@ -173,11 +228,11 @@ nav > ul > li > ul > li {
     white-space:nowrap;
 }
 
-nav > ul > li > ul > li:last-child {
+nav#feed-sources > ul > li > ul > li:last-child {
     border-bottom: none;
 }
 
-nav > ul:after{
+nav#feed-sources > ul:after{
     clear: both;
 }
 
