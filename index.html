@@ -4,7 +4,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="content-language" content="en"/>
         
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0,
+            user-scalable=no" />
         <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1.0,
             user-scalable=no, target-densitydpi=device-dpi"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=3.0,
@@ -43,18 +44,8 @@
         
         <script type="text/javascript" >
             
-            $(document).ready(function() {
+            /*$(document).ready(function() {
                 NProgress.start();
-                /*var viewportWidth = document.documentElement.clientWidth;
-                isotopeColumns = (viewportWidth > 799) ? 3 : 1; 
-                isotopeColumnWidth = Math.floor(viewportWidth / (isotopeColumns + 0.5));
-               // alert(isotopeColumnWidth);
-                
-                alert($('#interaction-area').innerWidth());
-                alert($('nav').innerWidth());
-                alert($('#interaction-area').innerWidth() - ($('nav').innerWidth() * 1.1));*/
-                //$('#stories').width(($('#interaction-area').innerWidth() - $('nav').outerWidth()));
-                /*alert($('#stories').width());*/
                 populateSidebar();
                 $(".feed-category").on("click", toggleCategory);
                 $(".feed-source").on("click", loadFeed);
@@ -71,7 +62,7 @@
                 
             //alert($('#stories').width() +'>>'+$('#stories').innerWidth() +'>>'+$('#stories').outerWidth());
             //Relayout when window is resized
-            $(window).smartresize(isotopeReLayout);
+            $(window).smartresize(isotopeReLayout);*/
                         
 		</script>
         
@@ -85,18 +76,116 @@
             document.addEventListener("appMobi.device.ready",onDeviceReady,false);
         </script>
     </head>
+    
+    <!--
+    <ul>
+        <li><a></a></li>
+        <li><a></a></li>
+        <li><a></a></li>
+        <li><a></a></li>
+        <li><a></a></li>
+    </ul>
+    -->
+    
+    <!-- Content Area -->
     <body>
-        <header>
-            <!--h1>Simply Readly NNN</h1-->
-            <ul class="page-header">
-                <li class="nav-logo">NNN</li>
-                <li class="site-name">SSS</li>
-                <li class="site-nav">
-                    <ul>
-                        <li id="site-nav-category">News</li>
-                        <li id="site-nav-source">CNN</li>
-                        <li id="site-nav-source-sub">Breaking News</li>
-                    </ul>
+        <header id="header" >
+            <ul id="menubar">
+                <!--side menu bar-->
+                <li id="sidemenu-hook"><a class="sidemenu-hook-name">Side</a>
+                    <nav id="sidemenu">
+                        <!--sub-sources will appear as a bar under main header-->
+                        <ul>
+                            <li><a class="side category">News</a>
+                                <ul>
+                                    <li><a class="side source">Source 1</a></li>
+                                    <li><a class="side source">Source 2</a></li>
+                                    <li><a class="side source">Source 3</a></li>
+                                    <li><a class="side source">Source 4</a></li>
+                                    <li><a class="side source">Source 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="side category">Entertainment</a>
+                                <ul>
+                                    <li><a class="side source">Source 1</a></li>
+                                    <li><a class="side source">Source 2</a></li>
+                                    <li><a class="side source">Source 3</a></li>
+                                    <li><a class="side source">Source 4</a></li>
+                                    <li><a class="side source">Source 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="side category">Lifestyle</a>
+                                <ul>
+                                    <li><a class="side source">Source 1</a></li>
+                                    <li><a class="side source">Source 2</a></li>
+                                    <li><a class="side source">Source 3</a></li>
+                                    <li><a class="side source">Source 4</a></li>
+                                    <li><a class="side source">Source 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="side category">Sports</a>
+                                <ul>
+                                    <li><a class="side source">Source 1</a></li>
+                                    <li><a class="side source">Source 2</a></li>
+                                    <li><a class="side source">Source 3</a></li>
+                                    <li><a class="side source">Source 4</a></li>
+                                    <li><a class="side source">Source 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="side category">Television</a>
+                                <ul>
+                                    <li><a class="side source">Source 1</a></li>
+                                    <li><a class="side source">Source 2</a></li>
+                                    <li><a class="side source">Source 3</a></li>
+                                    <li><a class="side source">Source 4</a></li>
+                                    <li><a class="side source">Source 5</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </li> 
+                <!-- Site Title -->
+                <li class="sitename title"><a>Ol.io</a></li>
+                <!--main menu bar-->
+                <li id="mainmenu-hook"><!--a id="mainmenu-hook-name">Name</a-->
+                    <nav id="mainmenu">
+                        <ul>
+                            <li class="site-name dropdown"><a href="#" class="sitename menutitle">Ol.io</a>
+                                <ul id="main-category-list" class="dropdown-list"> <!-- category list-->
+                                    <li><a href="#">111111</a></li>
+                                    <li><a href="#">22222</a></li>
+                                    <li><a href="#">3333333333</a></li>
+                                    <li><a href="#">22222</a></li>
+                                    <li><a href="#">3333333333</a></li>
+                                </ul>
+                            </li>
+                            <li id="main-category" class="dropdown"><a href="#" class="menutitle">Entertainment</a>
+                                <ul id="main-source-list" class="dropdown-list"> <!-- source list-->
+                                    <li><a href="#">4444444</a></li>
+                                    <li><a href="#">555555555</a></li>
+                                    <li><a href="#">66666667777777766</a></li>
+                                    <li><a href="#">4444444</a></li>
+                                    <li><a href="#">555555555</a></li>
+                                    <li><a href="#">4444444</a></li>
+                                    <li><a href="#">555555555</a></li>
+                                </ul>
+                            </li>
+                            <li id="main-source" class="dropdown"><a href="#" class="menutitle">Lifehacker</a>
+                                <ul id="main-sub-source-list" class="dropdown-list"> <!-- sub-source list-->
+                                    <li><a href="#">77777777777</a></li>
+                                    <!--li><a href="#">8888</a></li-->
+                                    <li><a href="#">9999999</a></li>
+                                    <li><a href="#">77777777777</a></li>
+                                    <li><a href="#">8888</a></li>
+                                    <li><a href="#">9999999</a></li>
+                                    <li><a href="#">77777777777</a></li>
+                                    <li><a href="#">8888</a></li>
+                                    <li><a href="#">9999999</a></li>
+                                </ul>
+                            </li>
+                            <li id="main-sub-source" class="dropdown"><a href="#" class="menutitle">Linux</a></li>
+                        </ul>
+                    </nav>
                 </li>
             </ul>
         </header>
@@ -107,9 +196,15 @@
             <section id="stories" >
                 <!-- articles populated here -->
             </section>
+            <aside id="page-aside">
+            </aside>
         </div>
         
-        <footer>Copyright info!</footer>
+        <div id="article-content">
+            
+        </div>
+        
+        <footer id="page-footer" >Copyright info!</footer>
         
     </body>
 </html>
