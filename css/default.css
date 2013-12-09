@@ -6,14 +6,15 @@ html {
 	text-rendering: optimizeLegibility;	
 	/*-webkit-font-smoothing: antialiased;*/
 	height: 100%;
+    width:100%;
     margin: 0;
 	padding: 0;
-    overflow:auto;
+    /*overflow:auto;*/
 }
 
 body {
 	width: 100%;
-	height: inherit;
+	height: 100%;
     z-index:1;
 }
 
@@ -41,7 +42,7 @@ body > header {
     font-size: 1.2rem;
     color: black;
     text-align: left;
-    background: #4EBAFF;
+    background: rgba(255, 255, 255, 1);/*#4EBAFF;*/
 }
 
 body > footer {
@@ -75,7 +76,7 @@ ul:after {
     padding:0;
     margin:0;
     width:100%;
-    height:100%
+    height:3rem;
     box-sizing:border-box;
     position: relative;
     line-height:3rem;
@@ -96,13 +97,14 @@ ul:after {
     display: block;
     color:rgba(128, 128, 128, 1);
     background:rgba(255, 255, 255, 1);
-    line-height:3rem;
-    height:3rem;
+    line-height:inherit;
+    height:inherit;    
+    padding: 0 0.7rem;
 }
 
 #menubar a:hover {
     background-color:rgba(128, 128, 128, 1);
-    color:rgba(255, 255, 255, 1);;
+    color:rgba(255, 255, 255, 1);
 }
 
 #menubar nav {
@@ -112,6 +114,7 @@ ul:after {
 
 #mainmenu-hook, #sidemenu-hook {
     z-index: 200;
+    height:3rem;
 }
 
 nav#mainmenu {
@@ -132,24 +135,37 @@ nav#mainmenu > ul {
 
 #sidemenu-hook {
     width: 3rem;
+    height:100%;
 }
 
 #sidemenu-hook:hover nav#sidemenu {
-    /*display: block;*/
-    transform: translateX(0);
-    transition: all 0.3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+    transform: translateX(14rem);
+    transition: all 0.4s cubic-bezier(0.8, 0, 0.2, 1) 0s;
 }
 
 nav#sidemenu {
     position: absolute;
     z-index: 200;
     width: 14rem;
+    left:-14rem;
+    height:30rem;
+    overflow-x:hidden;
+    overflow-y:overlay;
     display:block;
     float:none;
-    /*display:none;*/
     background:rgba(255, 255, 255, 1);
-    transform: translateX(-14rem);
-    transition: all 0s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+    transform: translateX(0);
+    transition: all 0.4s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+}
+
+nav#sidemenu > ul {
+    /*height:10em;
+    overflow: scroll;
+    overflow-x: hidden;*/
+}
+
+nav#sidemenu a {
+    line-height:2rem;
 }
 
 nav#sidemenu .side.category {
@@ -162,6 +178,11 @@ nav#sidemenu .side.category {
 .dropdown {
     display:table-cell;
     position:relative;
+}
+
+.dropdown, #sidemenu-hook {
+    border-right: rgba(128, 128, 128, 1) solid 0.1em;
+    background:rgba(255, 255, 255, 1);
 }
 
 .dropdown:hover .dropdown-list {
@@ -178,6 +199,68 @@ nav#sidemenu .side.category {
     text-align:center;
 }
 
+#sub-menubar-under-hook {
+    position:relative;
+    /*top:3rem;*/
+    box-sizing:border-box;
+    width:100%;
+}
+
+#sub-menubar-under {
+    list-style:none;
+    box-sizing:border-box;
+    width:100%;
+    position:relative;
+    text-align:center;
+}
+
+#sub-menubar-under li {
+    display:inline;
+    padding:0.1rem 1rem;
+    box-sizing:border-box;
+    border: white 0.1rem solid;
+    border-radius:0.4rem;
+}
+
+#sub-menubar-under li:hover {
+    border-color:lightgray;
+    background:lightgray;
+}
+/*
+#sidemenu-hook:hover #sidemenufixed {
+    transform: translateX(0);
+    transition: all 0.3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+}
+
+nav#sidemenufixed {
+    position:fixed;
+    padding-top:3rem;
+    top:0;
+    left:-12rem;
+    width:12rem;
+    height:50%;
+    list-style:none;
+    transform: translateX(-12rem);
+    transition: all 0.3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+}
+
+nav#sidemenufixed > ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow:auto;
+}
+*/
+
+#interaction-area {
+    position:absolute;
+    width:100%;
+}
+
+#interaction-area > div, #interaction-area > section, #interaction-area > aside {
+    display:block;
+}
 
 
 /* Responsive Design - Media Queries */
@@ -193,19 +276,11 @@ nav#sidemenu .side.category {
     .sitename.title {
         display:block;
     }
-    
-    section {
-        padding-left: 0.1%;
-    }    
-    
-    article {
-        width: 97%;
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-        box-sizing:border-box;
+
+    .dropdown, #sidemenu-hook {
+        border:none;
     }
+    
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
@@ -234,3 +309,4 @@ nav#sidemenu .side.category {
 section {
     padding-left: 0.2rem;
 }*/
+
